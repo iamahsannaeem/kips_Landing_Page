@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./src/code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      * {
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: "Poppins", sans-serif;
+        width: 100%;
+        height: auto;
+        margin: auto;
+      }
+
+      .navbar {
+        width: 100%;
+        height: 110px;
+        box-shadow: 0px 1px 5px gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.3vw 6.5vw;
+        font-weight: 500;
+        letter-spacing: 1px;
+        font-size: 14px;
+        color: #272727;
+        margin: auto;
+        
+        background-color: white;
+      }
+      .navbarlinks {
+        display: none;
+        gap: 30px;
+      }
+
+      .link {
+  position: relative;
+  text-decoration: none;
+  color: #000; /* Set the desired text color */
+  transition: 0.5s;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #000; 
+  bottom: 0;
+  left: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.25s;
+  
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
+.link:hover::before {
+  transform: scaleX(1);
+  width: 100%;
+}
+
+      
+      .logo {
+        width: 150px;
+        height: auto;
+      }
+
+      .menulogo {
+        font-size: 30px;
+      }
+
+      /* Navbar responsivness code start  */
+
+      
+      /* Navbar responsivness code end  */
+
+      .menu {
+        width: 100%;
+        background-color: #0070bf;
+        height: 70vh;
+        color: white;
+        font-size: 20px;
+       position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin-left: -100%;
+        transition: 0.4s all;
+      }
+
+      .menulink {
+        padding: 20px 30px;
+        cursor: pointer;
+      }
+      .menulink:hover {
+        background-color: white;
+        color: blue;
+      }
+
+      .imgslider{
+        width: 100%;
+        height: 70vh;
+        background-size: cover;
+        background-position: center;
+        animation: slider 16s  step-end infinite;  
+
+      }
+      .heading{
+        padding: 100px 80px;
+        width: 55%;
+
+      }
+      .oursuccess{
+        display: flex;
+        padding: 100px;
+        background-color: white;
+        gap: 5%;
+        align-items: center;
+      }
+      .oursucleft{
+        width: 100%;
+        height: 100%;
+      }
+      .succreadmore{
+        background: navy;
+        width: 200px;
+        text-align: center;
+        padding: 15px 20px;
+        color: white;
+        border-radius: 15px 15px 15px 0px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .succreadmore:hover{
+        background-color: skyblue;
+        transition: 0.25s;
+        color: black;
+      }
+      .oursucright{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+      }
+      .succesimg:hover{
+        transform: scale(1.05);
+        transition: 0.5s ease-out;
+      }
+      .message{
+        
+        padding: 50px 100px ;
+      }
+      .innermessagediv{
+        width: 100%;
+        height: 500px;
+        background-color: #0070bf;
+        border-radius: 20px;
+        padding: 50px;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        color: white;
+      }
+      
+      .messageright{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .ourproject{
+        background-color: lightgray;
+        padding: 100px;
+      }
+      .innerproject{
+          display: flex;
+          
+          justify-content: center;
+      }
+      .projectcontent{
+        width: 50%;
+        margin: auto;
+        padding: 20px;
+      }
+      .projectpics{
+        width: 50%;
+        
+      }
+      .boxdiv{
+        width: 90%;
+        height: 60px;
+        background-color: rgb(241, 239, 239);
+        margin: 20px 0px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        gap: 50px;
+        cursor: pointer;
+        
+      }
+      .boxdiv:hover{
+        box-shadow: 2px 2px 5px gray;
+        background-color: white;
+        transform: scale(1.01);
+        transition: 0.10s;
+      }
+      .num{
+        padding: 10px 12px;
+        background-color: navy;
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+      .detail{
+        font-size: 20px;
+        font-weight: 700;
+        color: navy;
+      }
+    .projectpics{
+      background-position: center;
+      background-size: cover;
+      animation: ourproject 6s step-end infinite;
+     
+    }
+    .whatmake{
+      padding: 100px 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .icons{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .icondivtop{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+    .icondivtop:hover{
+      transform: scale(1.1);
+      transition: 0.25s;
+    }
+    
+    .viewallbtn{
+
+      padding: 20px 40px; 
+      background-color: navy; 
+      color: white; 
+      font-weight: 600; 
+      font-size: 18px; 
+      margin: 50px 0px; 
+      border-radius: 10px 10px 10px 0px;
+      transition: 0.5s;
+    }
+    .viewallbtn:hover{
+
+      background-color: skyblue;
+      color: #272727;
+      cursor: pointer;
+    }
+
+    .numbersdiv{
+      width: 100%;
+      height: 50vh;
+      background-image: url(./img/statisitics.jpg);
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      padding: 30px;
+    }
+    .numberscontent{
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center
+
+    }
+   .nuberscount{
+    width: 50%;
+    height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+   }
+
+   .countinnerdiv{
+    height: 50%;
+    width: 100%;
+    
+   }
+   .count{
+    display: flex;
+    justify-content: space-evenly;
+    
+   }
+
+   .mainmapdiv{
+    width: 100%;
+    background-color: lightgray;
+    height: auto;
+    padding: 50px;
+    display: flex;
+   }
+
+   .mapcontdiv{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;
+   }
+   .mappak{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .becomepart{
+    width: 100%;
+    height: 90vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .partcont{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+   }
+
+   .partpicture{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    height: 50vh;
+    background-color: lightgray;
+    gap: 50px;
+   
+   }
+   .ContactUs{
+    flex: 1;
+   
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+   }
+   .UsefulLinks{
+    flex: 1;
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+ 
+   }
+   .FollowUs{
+    flex: 2;
+   
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+   }
+   .footertxtheading{
+    font-size: 20px;
+    color: navy;
+    font-weight: 600;
+
+   }
+   .footertxt{
+    font-size: 16px;
+    color: #272727;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+   }
+   .footertxt:hover{
+    text-decoration: underline;
+   }
+   .iconsformat{
+    font-size: 30px;
+    color: navy;
+    display: flex;
+    gap: 20px;
+   }
+    @keyframes ourproject{
+      0%{background-image: url(./img/ourprojectimg1.png);}
+      50%{background-image: url(./img/ourprojectimg2.png);}
+    }
+      
+      @keyframes slider{
+        0%{background-image: url(./img/back1.jpg) ;}
+        25%{background-image: url(./img/back2.jpg) ;}
+        50%{background-image: url(./img/back3.jpg) ;}
+        75%{background-image: url(./img/back4.jpg) ;}
+      }
+
+
+      @media (min-width: 0px) and (max-width: 768px) {
+        .heading{
+          width: 100%;
+          padding: 50px 30px;
+          line-clamp: 4;
+        }
+        .oursuccess{
+        flex-direction: column;
+        padding: 30px;
+        gap: 40px;
+
+      }
+      .innermessagediv{
+        width: 100%;
+        flex-wrap: wrap;
+        height: auto;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .messageright{
+        align-items: center;
+      }
+      
+      .message{
+        
+        padding: 10px ;
+      }
+      
+     .projectpics{
+      display: none;
+     }
+     .projectcontent{
+      width: 100%;
+      align-items: center;
+      
+     }
+
+     
+     .ourproject{
+      padding: 20px;
+     }
+     .numbersdiv{
+      height: 80vh;
+      flex-direction: column;
+      align-items: center;
+     }
+     .numberscontent{
+      width: 100%;
+      
+
+    }
+   .nuberscount{
+    width: 100%;
+    
+    
+   }
+   
+      .mainmapdiv{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+   }
+
+   .ourlocationsmap{
+    font-size: 30px;
+   }
+
+   .mappak{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+  
+
+   .mapcontdiv{
+    width: 100%;
+   }
+   .partpicture{
+    display: none;
+   }
+   .partcont{
+    width: 100%;
+   
+   }
+
+   .footer{
+    height: 70vh;
+   
+   }
+      }
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .heading{
+          width: 100%;
+          padding: 100px 50px;
+        }
+        .oursuccess{
+        padding: 50px;
+
+      }
+      
+      .innermessagediv{
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .messageright{
+        align-items: center;
+      }
+      .ourproject{
+        
+        padding: 20px;
+      }
+     
+      .projectcontent{
+      width: 100%;
+      
+     }
+
+     
+      .projectpics{
+      display: none;
+     }
+     
+     .mainmapdiv{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150vh;
+   }
+
+  
+
+
+   .ourlocationsmap{
+    font-size: 30px;
+   }
+
+   .mappak{
+    width: 100%;
+   }
+
+   .mapcontdiv{
+    width: 100%;
+   }
+   .partpicture{
+    display: none;
+   }
+   
+   .partcont{
+    width: 100%;
+   
+   }
+      
+
+      }
+      @media (min-width: 1025px) {
+        
+      }
+      @media (min-width: 1100px) {
+        .navbarlinks {
+          display: flex;
+        }
+        .menulogo {
+          display: none;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div><img class="logo " src="./img/site-logo.svg" alt="" /></div>
+        <div class="navbarlinks">
+          <div class="link">About Us</div>
+          <div class="link">Our Projects</div>
+          <div class="link">What Makes Us KIPS</div>
+          <div class="link">Career</div>
+          <div class="link">Partner With Us</div>
+          <div class="link">Contact Us</div>
+        </div>
+        <div class="menulogo" id="menubtn">
+          <i  class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+    <div class="menu">
+      <div class="menulink"><i class="fa-solid fa-house"></i></div>
+      <div class="menulink">About Us</div>
+      <div class="menulink">Our Projects</div>
+      <div class="menulink">What Makes Us KIPS</div>
+      <div class="menulink">Career</div>
+      <div class="menulink">Partner With Us</div>
+      <div class="menulink">Contact Us</div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var visible = true;
+            $('#menubtn').click(function(){
+                if (visible)
+                {
+                    $('.menu').css('marginLeft','-100%')
+                }else
+                {
+                    $('.menu').css('marginLeft','0%')
+                }
+                visible = !visible;
+                changeicon();
+            })
+            function changeicon(){
+                var bar = '<i class="fa-solid fa-bars"></i>';
+                var cross = '<i class="fa-solid fa-xmark"></i>';
+                if(visible){
+                    $('#menubtn').html(cross);
+                }else
+                {
+                    $('#menubtn').html(bar);  
+                }
+            }
+           
+        })
+    </script>
+    <div class="imgslider">
+        <div class="heading">
+            <div><img  src="./img/circle-1.svg" alt="" style="width: 50px; height: 50px;"></div>
+            <div  style="color: rgb(77, 174, 187); font-size: larger; font-weight: bold; text-transform: uppercase;">Welcome to the Kips Education System</div>
+            <div  style="color: white; font-size:2rem; font-weight: bolder;">Crafting a better Future Through Education</div>
+            <div  style="color: white;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At similique incidunt exercitationem totam, in numquam doloremque mollitia eligendi earum illum quaerat, quibusdam enim, dolor rerum iure odit. Ex necessitatibus tenetur quod ad quo quidem, ipsa asperiores</div>
+        </div>
+    </div>
+    <div class="oursuccess">
+      <div class="oursucleft " data-aos="fade-right" data-aos-duration="1000">
+        <div style="color: skyblue; font-size: medium; font-weight: bold;">About</div>
+        <div style="color: navy; font-size: 3rem; font-weight: bolder;">Our Success Story</div>
+        <div style="color: #272727; padding: 20px 0px;">KIPS is not merely an educational institute, it is a phenomenon. Over the last three decades, KIPS has earned outstanding success through its extensive network of Schools, Colleges, Evening Coaching, Entry Test Preparation, Competitive Exam Preparation, Foreign Test Preparation, School of Languages, and Publications . It has a league of successful students and professionals throughout the country and beyond. An immensely competent faculty, purpose-built campuses with state-of the-art facilities, and an elaborate quality assurance system are some of the ingredients of KIPS’ success.</div>
+        <div class="succreadmore">READ MORE</div>
+      </div>
+      
+      <div class="oursucright " data-aos="fade-left" data-aos-duration="1000" >
+        <img class="succesimg" src="./img/oursuccessimg.png" alt="" style="width: 400px; height: auto;">
+      </div>
+    </div>
+    
+    <div class="message" data-aos="flip-up" data-aos-duration="2000" >
+      <div class="innermessagediv">
+        <div class="messageleft"><img src="./img/Managing Director.png" alt="" style="border-radius: 20px;"></div>
+        <div class="messageright">
+          <p style="line-height: 28px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit iure, ipsum libero quaerat laudantium vel numquam. Aut aliquid quae voluptas fugiat qui dicta amet, quos voluptatem optio officiis atque in dolor ipsum necessitatibus quis, suscipit libero placeat quas aliquam numquam alias voluptate et. Explicabo dicta magni vero quod. Quae, aperiam.quos voluptatem optio officiis atque in dolor ipsum necessitatibus quis, suscipit libero placeat quas aliquam numquam alias voluptate et. Explicabo dicta magni vero quod. Quae, aperiam.</p>
+          <p style="font-size: 20px; font-weight: 600;">Salman Masood</p>
+          <p style="font-size: 18px; font-weight: 600;">Managing Director</p>
+        </div>
+      </div>
+    </div>
+    <div class="ourproject">
+      <div class="innerproject">
+          <div class="projectcontent" data-aos="zoom-in-right" data-aos-duration="1000">
+            <div style="font-weight: 700; color: rgb(91, 91, 91); text-transform: uppercase; font-size: 18px;">Discover</div>
+            <div style="font-size: 50px; font-weight: 700; color: navy;">Our Projects</div>
+            <div style="color: #272727;">KIPS caters to a wide range of scholastic needs from Pre-School to professional education.</div>
+            <div class="btndivs">
+              <div class="boxdiv">
+                <div class="num">01</div>
+                <div class="detail">KIPS School</div>
+              </div>
+              <div class="boxdiv">
+                <div class="num">02</div>
+                <div class="detail">KIPS Preparations</div>
+              </div>
+              <div class="boxdiv">
+                <div class="num">03</div>
+                <div class="detail">KIPS Virtual</div>
+              </div>
+              <div class="boxdiv">
+                <div class="num">04</div>
+                <div class="detail">KIPS Publications</div>
+              </div>
+              <div class="boxdiv">
+                <div class="num">05</div>
+                <div class="detail">KIPS Competitive Exam</div>
+              </div>
+              <div class="boxdiv">
+                <div class="num">06</div>
+                <div class="detail">KIPS College</div>
+              </div>
+            </div>
+          </div>
+          <div class="projectpics" data-aos="zoom-in-left"></div>
+      </div>
+    </div>
+    <div class="whatmake" data-aos="fade-up" data-aos-duration="2000">
+      <div style="color: gray; font-size: 20px; font-weight:600;">Discover</div>
+      <div style="font-size: 40px; font-weight: 700; color: navy; text-align: center;">What Make Us KIPS</div>
+      <div style="width: 80%; text-align: center; font-weight: 600; color: #272727;">KIPS has scaled unparalleled heights, introduced a number of innovations and set unprecedented standards in education.</div>
+      <div class="icons">
+        <div class="icondivtop">
+          <img src="./img/icon1.svg" alt="">
+          <p style="font-weight: 600 ; font-size: 18; color: #272727;">Qaulity Assurance</p>
+        </div>
+        <div class="icondivtop">
+          <img src="./img/icon2.svg" alt="">
+          <p style="font-weight: 600 ; font-size: 18; color: #272727;">Student Care and Counselling</p>
+        </div>
+        <div class="icondivtop">
+          <img src="./img/icon3.svg" alt="">
+          <p style="font-weight: 600 ; font-size: 18; color: #272727;">Teaching Methodology</p>
+        </div>
+        <div class="icondivtop">
+          <img src="./img/icon4.svg" alt="">
+          <p style="font-weight: 600 ; font-size: 18; color: #272727;">Feedback Mechanism</p>
+        </div>
+        <div class="icondivtop">
+          <img src="./img/icon5.svg" alt="">
+          <p style="font-weight: 600 ; font-size: 18; color: #272727;">Nationwide Campuses</p>
+        </div>
+      </div>
+      <div class="viewallbtn">VIEW ALL</div>
+    </div>
+   <div class="numbersdiv" >
+      <div class="numberscontent" data-aos="fade-up" data-aos-duration="2000">
+        <div style="font-weight: 700; color: gray; font-size: 20px;">Discover</div>
+        <div style="font-weight: 700; color: white; font-size:40px;">KIPS by the Numbers</div>
+        <div style="font-weight: 500; color: white;">KIPS has pulled off unmatched success and incomparable expansion in its journey of two decades.</div>
+      </div>
+      <div class="nuberscount" data-aos="fade-up" data-aos-duration="2000">
+       <div class="countinnerdiv">
+        <div class="count">
+          <div style="text-align: center; width: 80%;">
+            <p style="font-size: 40px; font-weight: 800; color: white;">A+/A</p>
+          <p style="font-size: 16px; text-transform: uppercase; color: gray;">Acheived By Every Second Student</p>
+          </div>
+          <div style="text-align: center; width: 80%;">
+            <p style="font-size: 40px; font-weight: 800; color: white;">70%</p>
+          <p style="font-size: 16px; text-transform: uppercase; color: gray;">State Secured With Universities</p>
+          </div>
+        </div>
+        <div class="count">
+          <div style="text-align: center; width: 80%;">
+            <p style="font-size: 40px; font-weight: 800; color: white;">1M+</p>
+          <p style="font-size: 16px; text-transform: uppercase; color: gray;">Alumini Network</p>
+          </div>
+          <div style="text-align: center; width: 80%;">
+            <p style="font-size: 40px; font-weight: 800; color: white;">200+</p>
+          <p style="font-size: 16px; text-transform: uppercase; color: gray;">Campus Accros the Pakistan</p>
+          </div>
+        </div>
+        </div>
+       </div>
+      </div>
+   <div class="mainmapdiv">
+    <div class="mapcontdiv" data-aos="fade-right" data-aos-duration="2000" >
+      <img src="./img/darkcircle.svg" alt="" style="width: 100px; height: 100px; align-self: flex-end;">
+      <p style="font-weight: 700; color: gray; font-size: 20px;">DISCOVER</p>
+      <p class="ourlocationsmap" style="font-size: 50px; font-weight: 700; color: navy;">Our Locations</p>
+      <p style="font-weight: 500; color: navy;">KIPS has its presence in most major cities of Pakistan and is expanding expeditiously.</p>
+    </div>
+    <div class="mappak" data-aos="fade-left" data-aos-duration="1000">
+      <img src="./img/map.png" alt="" width="80%">
+    </div>
+   </div>
+   <div class="becomepart">
+    <div class="partcont" data-aos="fade-up" data-aos-duration="2000">
+      <div style="color: skyblue; font-size: medium; font-weight: bold;">JOIN HANDS</div>
+      <div style="color: navy; font-size: 3rem; font-weight: bolder;">Become a Partner</div>
+      <div style="color: #272727; padding: 20px 0px;">Join us in our endeavor to enlighten our society, serve our motherland, and make the world a better place to dwell in</div>
+      <div class="succreadmore">Get started</div>
+    </div>
+    <div class="partpicture" data-aos="fade-up" data-aos-duration="2000">
+      <img src="./img/becomepart.png" alt="">
+    </div>
+   </div>
+   <div class="footer">
+    <div class="ContactUs">
+      <p class="footertxtheading">Contact Us</p>
+      <p class="footertxt">info@kips.edu.pk</p>
+      <p class="footertxt">(042) 111 547 775</p>
+      <p class="footertxt">+92 345 0900376</p>
+      <p class="footertxt">5/6, D-1 Khayaban-e-Firdousi,
+        Johar Town Lahore,
+        Pakistan</p>
+    </div>
+    <div class="UsefulLinks">
+      <p class="footertxtheading">Useful Links</p>
+      <p class="footertxt">About Us</p>
+      <p class="footertxt">Our Projects</p>
+      <p class="footertxt">What Makes Us KIPS</p>
+      <p class="footertxt">Careers</p>
+      <p class="footertxt">Partner with Us</p>
+    </div>
+    <div class="FollowUs">
+      <p class="footertxtheading">Follow Us</p>
+      <p class="footertxt">Connect with us through social media to keep updated with important information.</p>
+      <div class="iconsformat">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-pinterest"></i>
+      </div>
+    </div>
+   </div>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+    AOS.init();
+  </script>
+  </body>
+</html>
+
